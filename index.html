@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Gayatri 🌙💖</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<audio id="music" loop>
+  <source src="og/song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="stars"></div>
+
+<div class="container">
+
+  <h1>Happy Birthday Gayatri 🎂✨</h1>
+
+  <!-- Countdown to 7 March 2026 -->
+  <div class="countdown">
+    <h3>Countdown to 7 March 🎉</h3>
+    <div id="birthdayTimer"></div>
+  </div>
+
+  <!-- Cake -->
+  <div class="cake" onclick="blowCandles()">🎂</div>
+
+  <!-- Typing Message -->
+  <h2 id="typing"></h2>
+
+  <!-- Love Counter -->
+  <div class="counter">
+    <p>Since 25 January 2025 – 9:30 PM 💞</p>
+    <div id="loveTime"></div>
+  </div>
+
+  <!-- Memories Section -->
+  <div class="memories">
+    <h2>Our Memories 📸🎥</h2>
+
+    <div class="gallery">
+
+      <div class="card">
+        <img src="og/photo1.jpg">
+        <p>My Favorite Smile 💖</p>
+      </div>
+
+      <div class="card">
+        <video controls>
+          <source src="og/video1.mp4" type="video/mp4">
+        </video>
+        <p>One of my happiest moments 🌙</p>
+      </div>
+
+      <div class="card">
+        <video controls>
+          <source src="og/video2.mp4" type="video/mp4">
+        </video>
+        <p>Still gives me butterflies 🦋</p>
+      </div>
+
+      <div class="card">
+        <video controls>
+          <source src="og/video3.mp4" type="video/mp4">
+        </video>
+        <p>This memory = forever 🫶</p>
+      </div>
+
+      <div class="card">
+        <video controls>
+          <source src="og/video4.mp4" type="video/mp4">
+        </video>
+        <p>I replay this 100 times 😭💗</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+
+/* ===== MUSIC FADE IN ===== */
+const music = document.getElementById("music");
+window.addEventListener("click", () => {
+  music.volume = 0;
+  music.play();
+  let fade = setInterval(() => {
+    if (music.volume < 1) {
+      music.volume += 0.05;
+    } else {
+      clearInterval(fade);
+    }
+  }, 200);
+}, { once: true });
+
+/* ===== COUNTDOWN TO 7 MARCH 2026 ===== */
+const birthday = new Date("2026-03-07T00:00:00");
+
+function updateBirthday() {
+  const now = new Date();
+  const diff = birthday - now;
+
+  if (diff > 0) {
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff / (1000*60*60)) % 24);
+    const minutes = Math.floor((diff / (1000*60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("birthdayTimer").innerHTML =
+      days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+  } else {
+    document.getElementById("birthdayTimer").innerHTML =
+      "It's Her Dayyyyy 🎉💖";
+  }
+}
+setInterval(updateBirthday, 1000);
+updateBirthday();
+
+/* ===== TYPING EFFECT ===== */
+const text = "Gayatri... 🌙💖\nFrom 25 January 2025, 9:30 PM...\nMy world changed forever.\nEven miles apart,\nYou are my safest place.\nHappy Birthday My Love 🎂✨";
+let i = 0;
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 50);
+  }
+}
+typeWriter();
+
+/* ===== LOVE COUNTER FROM 25 JAN 2025 ===== */
+const startDate = new Date("2025-01-25T21:30:00");
+
+function updateCounter() {
+  const now = new Date();
+  const diff = now - startDate;
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("loveTime").innerHTML =
+    days + " days 💕<br>" +
+    hours + " hours 💗<br>" +
+    minutes + " minutes 💖<br>" +
+    seconds + " seconds 💘";
+}
+setInterval(updateCounter, 1000);
+updateCounter();
+
+/* ===== CAKE CLICK ===== */
+function blowCandles() {
+  document.body.style.background = "#000";
+  document.querySelector(".cake").innerHTML = "🕯️✨ Wish made!";
+}
+
+/* ===== CLICK HEARTS ===== */
+document.addEventListener("click", function(e) {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.style.left = e.pageX + "px";
+  heart.style.top = e.pageY + "px";
+  heart.innerHTML = "💖";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 1000);
+});
+
+</script>
+
+</body>
+</html>
