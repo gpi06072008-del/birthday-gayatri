@@ -7,112 +7,63 @@ body {
   overflow-x: hidden;
 }
 
-/* Stars Background */
-.stars {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: url("https://www.transparenttextures.com/patterns/stardust.png");
-  animation: moveStars 60s linear infinite;
-  z-index: -1;
+.page2 {
+  display: none;
+  padding: 40px;
 }
 
-@keyframes moveStars {
-  from { background-position: 0 0; }
-  to { background-position: 10000px 5000px; }
-}
-
-.container {
-  margin-top: 60px;
-  padding: 20px;
-}
-
-h1 {
-  font-size: 2.8rem;
-  color: #ff4da6;
-}
-
-.countdown {
-  margin: 20px 0;
-  font-size: 1.3rem;
-  color: #ff99dd;
-}
-
-.cake {
-  font-size: 4rem;
+.enter-btn {
+  padding: 20px 40px;
+  font-size: 22px;
+  border: none;
+  border-radius: 50px;
+  background: pink;
   cursor: pointer;
-  margin: 20px;
-  transition: 0.3s;
-}
-
-.cake:hover {
-  transform: scale(1.2);
-}
-
-#typing {
-  white-space: pre-line;
-  font-size: 1.2rem;
-  margin-top: 20px;
-  color: #ffd1f0;
-  min-height: 140px;
+  margin-top: 40vh;
 }
 
 .counter {
-  margin-top: 30px;
-  font-size: 1.2rem;
-  color: #ffb3ec;
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.typing {
+  font-size: 20px;
+  white-space: pre-line;
+  margin: 30px;
 }
 
 .memories {
-  margin-top: 60px;
+  margin-top: 40px;
+}
+
+.gallery video,
+.gallery img {
+  width: 300px;
+  margin: 15px;
+  border-radius: 20px;
+}
+
+.secret {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 0, 100, 0.9);
   padding: 20px;
-}
-
-.memories h2 {
-  color: #ff66cc;
-  margin-bottom: 30px;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 15px;
   border-radius: 15px;
-  width: 280px;
-  box-shadow: 0 0 20px rgba(255, 77, 166, 0.4);
-  transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-10px);
-}
-
-.card img,
-.card video {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.card p {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #ffd1f0;
-}
-
-/* Click Hearts */
 .heart {
-  position: absolute;
+  position: fixed;
+  top: -10px;
   font-size: 20px;
-  animation: floatUp 1s ease forwards;
+  animation: fall linear forwards;
 }
 
-@keyframes floatUp {
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-80px); opacity: 0; }
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
 }
