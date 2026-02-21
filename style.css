@@ -1,69 +1,86 @@
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-  color: white;
-  text-align: center;
-  overflow-x: hidden;
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(to bottom,#0f0c29,#302b63,#24243e);
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
 }
 
-.page2 {
-  display: none;
-  padding: 40px;
+/* Page layout */
+.page2{
+  display:none;
+  padding:30px;
 }
 
-.enter-btn {
-  padding: 20px 40px;
-  font-size: 22px;
-  border: none;
-  border-radius: 50px;
-  background: pink;
-  cursor: pointer;
-  margin-top: 40vh;
+/* Button */
+.enter-btn{
+  margin-top:40vh;
+  padding:20px 40px;
+  font-size:22px;
+  border:none;
+  border-radius:50px;
+  background:pink;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-.counter {
-  font-size: 24px;
-  margin: 20px 0;
+.enter-btn:hover{
+  transform:scale(1.1);
+  background:#ff69b4;
 }
 
-.typing {
-  font-size: 20px;
-  white-space: pre-line;
-  margin: 30px;
+/* Counter */
+.counter{
+  font-size:24px;
+  margin:20px 0;
 }
 
-.memories {
-  margin-top: 40px;
+/* Typing */
+.typing{
+  font-size:20px;
+  white-space:pre-line;
+  margin:30px;
+}
+
+/* Memories */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
 .gallery video,
-.gallery img {
-  width: 300px;
-  margin: 15px;
-  border-radius: 20px;
+.gallery img{
+  width:300px;
+  margin:15px;
+  border-radius:20px;
 }
 
-.secret {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(255, 0, 100, 0.9);
-  padding: 20px;
-  border-radius: 15px;
+/* Secret popup */
+.secret{
+  display:none;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:rgba(255,0,120,0.95);
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 0 20px pink;
+  z-index:9999;
 }
 
-.heart {
-  position: fixed;
-  top: -10px;
-  font-size: 20px;
-  animation: fall linear forwards;
+/* Falling hearts */
+.heart{
+  position:fixed;
+  top:-10px;
+  font-size:20px;
+  animation:fall linear forwards;
 }
 
-@keyframes fall {
-  to {
-    transform: translateY(100vh);
-    opacity: 0;
+@keyframes fall{
+  to{
+    transform:translateY(100vh);
+    opacity:0;
   }
 }
