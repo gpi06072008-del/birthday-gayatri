@@ -1,49 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday Gayatri 💖</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Gayatri 💖</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- ===== PAGE 1 ===== -->
+<!-- PAGE 1 -->
 <div class="page1">
-  <button onclick="startSurprise()" class="enter-btn">
+  <button class="enter-btn" onclick="startSurprise()">
     Click Here Baby 💖
   </button>
 </div>
 
-<!-- ===== PAGE 2 ===== -->
+<!-- PAGE 2 -->
 <div class="page2">
 
-  <h1>Happy Birthday Gayatri 🎂💖</h1>
+<h1>Happy Birthday Gayatri 🎂💖</h1>
 
-  <!-- Love Counter -->
-  <div id="loveTime" class="counter"></div>
+<div id="loveTime" class="counter"></div>
 
-  <!-- Typing Message -->
-  <p id="typingText" class="typing"></p>
+<p id="typingText" class="typing"></p>
 
-  <!-- Memories -->
-  <section class="memories">
-    <h2>💞 Our Memories 💞</h2>
-    <div class="gallery">
-      <video controls><source src="video1.mp4" type="video/mp4"></video>
-      <video controls><source src="video2.mp4" type="video/mp4"></video>
-      <video controls><source src="video3.mp4" type="video/mp4"></video>
-      <video controls><source src="video4.mp4" type="video/mp4"></video>
-      <img src="photo1.jpg">
-    </div>
-  </section>
+<h2>💞 Our Memories 💞</h2>
+<div class="gallery">
+  <video controls><source src="video1.mp4" type="video/mp4"></video>
+  <video controls><source src="video2.mp4" type="video/mp4"></video>
+  <video controls><source src="video4.mp4" type="video/mp4"></video>
+  <img src="photo1.jpg">
+</div>
 
 </div>
 
 <!-- Secret Message -->
 <div id="secretMessage" class="secret">
   💌 Gayatri…  
-  From 25 Jan 2025 9:30 PM  
-  You became my whole world 🌍💖  
+  Since 25 Jan 2025 9:30 PM  
+  you became my whole world 🌍💖  
   I love you forever 🥹
 </div>
 
@@ -54,70 +50,73 @@
 
 <script>
 
-/* ===== PAGE SWITCH + MUSIC ===== */
-function startSurprise() {
-  document.querySelector(".page1").style.display = "none";
-  document.querySelector(".page2").style.display = "block";
+/* Page switch + music */
+function startSurprise(){
+  document.querySelector(".page1").style.display="none";
+  document.querySelector(".page2").style.display="block";
   document.getElementById("bgMusic").play();
 }
 
-/* ===== LOVE COUNTER ===== */
-const startDate = new Date("2025-01-25T21:30:00");
+/* Love counter */
+const startDate=new Date("2025-01-25T21:30:00");
 
-function updateCounter() {
-  const now = new Date();
-  const diff = now - startDate;
+function updateCounter(){
+  const now=new Date();
+  const diff=now-startDate;
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
+  const days=Math.floor(diff/(1000*60*60*24));
+  const hours=Math.floor((diff/(1000*60*60))%24);
+  const minutes=Math.floor((diff/(1000*60))%60);
+  const seconds=Math.floor((diff/1000)%60);
 
-  document.getElementById("loveTime").innerHTML =
-    days + " days 💕<br>" +
-    hours + " hours 💗<br>" +
-    minutes + " minutes 💖<br>" +
-    seconds + " seconds 💘";
+  document.getElementById("loveTime").innerHTML=
+  days+" days 💕<br>"+
+  hours+" hours 💗<br>"+
+  minutes+" minutes 💖<br>"+
+  seconds+" seconds 💘";
 }
-
-setInterval(updateCounter, 1000);
+setInterval(updateCounter,1000);
 updateCounter();
 
-/* ===== AUTO TYPING MESSAGE ===== */
-const message = "On 7 March, the world was blessed with you 💖\nFrom 25 Jan 2025 9:30 PM, my life changed forever 🌙\nYou are my happiness, my peace, my everything 💕\nHappy Birthday My Love 🎂✨";
+/* Typing effect */
+const message=
+"On 7 March, the world was blessed with you 💖\n"+
+"From 25 Jan 2025 9:30 PM, my life changed forever 🌙\n"+
+"You are my happiness, my peace, my everything 💕\n"+
+"Happy Birthday My Love 🎂✨";
 
-let i = 0;
-function typeEffect() {
-  if (i < message.length) {
-    document.getElementById("typingText").innerHTML += message.charAt(i);
+let i=0;
+function typeEffect(){
+  if(i<message.length){
+    document.getElementById("typingText").innerHTML+=message.charAt(i);
     i++;
-    setTimeout(typeEffect, 50);
+    setTimeout(typeEffect,50);
   }
 }
 typeEffect();
 
-/* ===== SECRET MESSAGE (Press G 3 times) ===== */
-let gCount = 0;
-document.addEventListener("keydown", function(event) {
-  if (event.key.toLowerCase() === "g") {
+/* Secret trigger (Press G 3 times) */
+let gCount=0;
+document.addEventListener("keydown",function(e){
+  if(e.key.toLowerCase()==="g"){
     gCount++;
-    if (gCount === 3) {
-      document.getElementById("secretMessage").style.display = "block";
-      gCount = 0;
+    if(gCount===3){
+      document.getElementById("secretMessage").style.display="block";
+      gCount=0;
     }
   }
 });
 
-/* ===== FALLING HEARTS ===== */
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "💖";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+/* Falling hearts */
+setInterval(()=>{
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="💖";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(Math.random()*3+2)+"s";
   document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 5000);
-}, 300);
+  setTimeout(()=>heart.remove(),5000);
+},300);
 
 </script>
 
