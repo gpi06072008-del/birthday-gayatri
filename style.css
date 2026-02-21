@@ -1,86 +1,100 @@
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(to bottom,#0f0c29,#302b63,#24243e);
-  color:white;
-  text-align:center;
-  overflow-x:hidden;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #1a0033, #330066);
+  color: white;
 }
 
-/* Page layout */
-.page2{
-  display:none;
-  padding:30px;
+/* 🔐 LOCK SCREEN */
+#lockScreen {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #1a0033, #330066);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Button */
-.enter-btn{
-  margin-top:40vh;
-  padding:20px 40px;
-  font-size:22px;
-  border:none;
-  border-radius:50px;
-  background:pink;
-  cursor:pointer;
-  transition:0.3s;
+.lock-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
 }
 
-.enter-btn:hover{
-  transform:scale(1.1);
-  background:#ff69b4;
+.lock-box input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 0;
 }
 
-/* Counter */
-.counter{
-  font-size:24px;
-  margin:20px 0;
+.lock-box button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #ff4da6;
+  color: white;
+  cursor: pointer;
 }
 
-/* Typing */
-.typing{
-  font-size:20px;
-  white-space:pre-line;
-  margin:30px;
+.hint {
+  font-size: 14px;
+  opacity: 0.8;
 }
 
-/* Memories */
-.gallery{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
+#errorMsg {
+  color: #ff8080;
+}
+
+/* 💖 MAIN CONTENT */
+#mainContent {
+  display: none;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 36px;
+  cursor: pointer;
+}
+
+#countdown {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.message {
+  margin: 20px;
+  line-height: 1.6;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .gallery video,
-.gallery img{
-  width:300px;
-  margin:15px;
-  border-radius:20px;
+.gallery img {
+  width: 220px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
 }
 
-/* Secret popup */
-.secret{
-  display:none;
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:rgba(255,0,120,0.95);
-  padding:20px;
-  border-radius:15px;
-  box-shadow:0 0 20px pink;
-  z-index:9999;
-}
-
-/* Falling hearts */
-.heart{
-  position:fixed;
-  top:-10px;
-  font-size:20px;
-  animation:fall linear forwards;
-}
-
-@keyframes fall{
-  to{
-    transform:translateY(100vh);
-    opacity:0;
-  }
+/* 💌 SECRET MESSAGE */
+.secret-box {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(45deg, #ff4e9b, #ff85c1);
+  padding: 20px;
+  border-radius: 15px;
+  width: 260px;
+  font-size: 14px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
 }
