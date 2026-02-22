@@ -1,41 +1,32 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
   text-align: center;
-  background: linear-gradient(135deg, #1a0033, #330066);
   color: white;
 }
 
-/* 🔐 LOCK SCREEN */
-#lockScreen {
-  position: fixed;
-  width: 100%;
+.lock-screen {
   height: 100vh;
-  background: linear-gradient(135deg, #1a0033, #330066);
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
-.lock-box {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 40px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-}
-
-.lock-box input {
+.lock-screen input {
   padding: 10px;
-  border-radius: 10px;
+  font-size: 16px;
+  border-radius: 20px;
   border: none;
-  margin: 10px 0;
+  margin: 10px;
+  text-align: center;
 }
 
-.lock-box button {
+.lock-screen button {
   padding: 10px 20px;
   border: none;
   border-radius: 20px;
-  background: #ff4da6;
+  background: #ff4d6d;
   color: white;
   cursor: pointer;
 }
@@ -45,29 +36,9 @@ body {
   opacity: 0.8;
 }
 
-#errorMsg {
-  color: #ff8080;
-}
-
-/* 💖 MAIN CONTENT */
-#mainContent {
-  display: none;
-  padding: 40px 20px;
-}
-
-h1 {
-  font-size: 36px;
-  cursor: pointer;
-}
-
-#countdown {
-  font-size: 20px;
-  margin: 20px 0;
-}
-
 .message {
+  font-size: 18px;
   margin: 20px;
-  line-height: 1.6;
 }
 
 .gallery {
@@ -75,19 +46,16 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  margin-top: 20px;
+  margin: 20px;
 }
 
 .gallery video,
 .gallery img {
-  width: 220px;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+  width: 250px;
+  border-radius: 15px;
 }
 
-/* 💌 SECRET MESSAGE */
 .secret-section {
-  text-align: center;
   margin-top: 40px;
 }
 
@@ -111,17 +79,10 @@ h1 {
   display: none;
   margin-top: 20px;
   font-size: 18px;
-  color: #ff1e56;
   background: #fff0f5;
+  color: #ff1e56;
   padding: 20px;
   border-radius: 15px;
   width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  margin: 20px auto;
 }
