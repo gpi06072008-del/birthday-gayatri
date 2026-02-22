@@ -9,14 +9,7 @@
 <body>
 
 <!-- Background Music -->
-let musicStarted = false;
-
-document.addEventListener("click", function() {
-  if (!musicStarted) {
-    const music = document.getElementById("bgMusic");
-    music.play().catch(()=>{});
-    musicStarted = true;
-  }
+<audio id="bgMusic" src="song.mp3" loop preload="auto"></audio>
 });
 
 <!-- Floating Stars -->
@@ -138,6 +131,21 @@ function unlockSecret() {
   }
 }
 
+  <script>
+const music = document.getElementById("bgMusic");
+
+function startMusic() {
+  if (music.paused) {
+    music.play().then(() => {
+      console.log("Music started");
+    }).catch(err => {
+      console.log("Play prevented:", err);
+    });
+  }
+}
+
+// Works for ALL devices
+document.addEventListener("touchstart", startMusic, { once: true });
+document.addEventListener("click", startMusic, { once: true });
+document.addEventListener("scroll", startMusic, { once: true });
 </script>
-</body>
-</html>
