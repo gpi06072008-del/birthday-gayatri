@@ -2,109 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday Gayuuuuu 💖</title>
+  <title>Happy Birthday My Love 💖</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- 🔐 PASSWORD SCREEN -->
-<div id="lockScreen">
-  <div class="lock-box">
-    <h2>🔒 Enter Password</h2>
-    <p class="hint">Hint: This number is very special to us 💕</p>
-    <input type="password" id="passwordInput" placeholder="Enter password">
-    <button onclick="checkPassword()">Unlock 💖</button>
-    <p id="errorMsg"></p>
+<!-- PASSWORD SCREEN -->
+<div id="lockScreen" class="lock-screen">
+  <h2>Enter Password 🔐</h2>
+  <p class="hint">Hint: This number is very special to us 💖</p>
+  <input type="password" id="passwordInput" placeholder="Enter password">
+  <button onclick="checkPassword()">Unlock</button>
+  <p id="errorMsg"></p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent" style="display:none;">
+
+  <h1>Happy Birthday My Love 🎂💖</h1>
+
+  <div id="countdown"></div>
+
+  <p class="message">
+    From 25 January 2025, 9:30 PM 🌙  
+    My life changed forever.  
+    You are my happiness, my peace, my everything 💕
+  </p>
+
+  <h2>💞 Our Memories 💞</h2>
+
+  <div class="gallery">
+    <video controls>
+      <source src="og/video1.mp4" type="video/mp4">
+    </video>
+
+    <video controls>
+      <source src="og/video2.mp4" type="video/mp4">
+    </video>
+
+    <video controls>
+      <source src="og/video4.mp4" type="video/mp4">
+    </video>
+
+    <img src="og/photo1.jpg" alt="Our Memory">
   </div>
-</div>
 
-<!-- 💖 MAIN CONTENT -->
-<div id="mainContent">
+  <!-- SECRET MESSAGE BUTTON -->
+  <div class="secret-section">
+    <button onclick="showSecret()" class="secret-btn">
+      💌 Unlock Secret Message
+    </button>
 
-<h1 id="mainTitle">Happy Birthday Gayatri 🎂💖</h1>
-
-<div id="countdown"></div>
-
-<p class="message">
-  On 7 March, the world was blessed with you 💕<br>
-  From 25 Jan 2025 9:30 PM, my life changed forever 🌙<br>
-  You are my happiness, my peace, my everything 💖
-</p>
-
-<h2>💞 Our Memories 💞</h2>
-
-<div class="gallery">
-  <video src="og/video1.mp4" controls></video>
-  <video src="og/video2.mp4" controls></video>
-  <video src="og/video4.mp4" controls></video>
-  <img src="og/photo1.jpg">
-</div>
-
-<!-- 🎵 MUSIC -->
-<audio id="bgMusic" src="og/song.mp3" loop></audio>
-
-<!-- 💌 SECRET MESSAGE -->
-<div id="secretMessage" class="secret-box">
-  💌 Gayatri...<br><br>
-  If you found this, it means you are my destiny 💫<br>
-  From 25 Jan 2025, 9:30 PM<br>
-  you became my forever ❤️<br><br>
-  I love you endlessly 🥺
-</div>
+    <div id="secretMessage" class="secret-message">
+      0607 isn’t just a number… 💖  
+      It’s our memories, our smiles, our forever.  
+      I promise to stay with you in every phase of life.  
+      I love you endlessly ❤️
+    </div>
+  </div>
 
 </div>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="og/song.mp3" type="audio/mp3">
+</audio>
 
 <script>
-function showSecret() {
-  document.getElementById("secretMessage").style.display = "block";
-}
-</script>
-// 🔐 PASSWORD CHECK
 function checkPassword() {
-  const password = document.getElementById("passwordInput").value;
+  var password = document.getElementById("passwordInput").value;
   if (password === "0607") {
     document.getElementById("lockScreen").style.display = "none";
     document.getElementById("mainContent").style.display = "block";
-    document.getElementById("bgMusic").play();
+    document.getElementById("bgMusic").play().catch(() => {});
   } else {
-    document.getElementById("errorMsg").innerText = "Wrong password 💔";
+    document.getElementById("errorMsg").innerText = "Wrong password 😢";
   }
 }
 
-// ⏳ COUNTDOWN FROM 25 JAN 2025 9:30 PM
-const startDate = new Date("Jan 25, 2025 21:30:00").getTime();
+function showSecret() {
+  document.getElementById("secretMessage").style.display = "block";
+}
 
-setInterval(function () {
-  const now = new Date().getTime();
-  const distance = now - startDate;
+// COUNTDOWN FROM 25 JAN 2025 9:30 PM
+var startDate = new Date("January 25, 2025 21:30:00").getTime();
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+setInterval(function() {
+  var now = new Date().getTime();
+  var diff = now - startDate;
+
+  var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
   document.getElementById("countdown").innerHTML =
-    days + " days 💖<br>" +
-    hours + " hours 💕<br>" +
-    minutes + " minutes 💗<br>" +
-    seconds + " seconds 💘";
+    "Together since 💕 " + days + " days " + hours + " hrs "
+    + minutes + " mins " + seconds + " secs";
 }, 1000);
-
-<div class="secret-section">
-  <button onclick="showSecret()" class="secret-btn">
-    💌 Unlock Secret Message
-  </button>
-
-  <div id="secretMessage" class="secret-message">
-    From 25 Jan 2025, 9:30 PM… 🌙  
-    I knew you were special.  
-    0607 isn’t just a number…  
-    It’s our story, our date, our forever 💖  
-    I love you more than words can explain.
-  </div>
-</div>
-});
-
 </script>
 
 </body>
