@@ -27,6 +27,10 @@
     From 25 January 2025, 9:30 PM 🌙  
     My life changed forever.  
     You are my happiness, my peace, my everything 💕
+    You walked into my life and turned it into a beautiful love story. 💖✨
+    Your smile is my favorite reason to be happy every single day. 😊🌸
+    No matter what happens, my heart will always choose you. 💕 
+    I love you more than words can ever express. 💞
   </p>
 
   <h2>💞 Our Memories 💞</h2>
@@ -47,18 +51,13 @@
     <img src="og/photo1.jpg" alt="Our Memory">
   </div>
 
-  <!-- SECRET MESSAGE BUTTON -->
+  <!-- SECRET MESSAGE -->
   <div class="secret-section">
-    <button onclick="showSecret()" class="secret-btn">
+    <button onclick="startTyping()" class="secret-btn">
       💌 Unlock Secret Message
     </button>
 
-    <div id="secretMessage" class="secret-message">
-      0607 isn’t just a number… 💖  
-      It’s our memories, our smiles, our forever.  
-      I promise to stay with you in every phase of life.  
-      I love you endlessly ❤️
-    </div>
+    <div id="secretMessage" class="secret-message"></div>
   </div>
 
 </div>
@@ -80,11 +79,7 @@ function checkPassword() {
   }
 }
 
-function showSecret() {
-  document.getElementById("secretMessage").style.display = "block";
-}
-
-// COUNTDOWN FROM 25 JAN 2025 9:30 PM
+// COUNTDOWN
 var startDate = new Date("January 25, 2025 21:30:00").getTime();
 
 setInterval(function() {
@@ -100,6 +95,35 @@ setInterval(function() {
     "Together since 💕 " + days + " days " + hours + " hrs "
     + minutes + " mins " + seconds + " secs";
 }, 1000);
+
+// AUTO TYPING EFFECT
+var messageText = 607 is not just a number but, it is very special… 💖  
+      It’s our memories, our smiles, our forever. 
+      You are the most beautiful part of my life and my biggest blessing. ✨💖
+      With you, every day feels special and full of happiness. 🥰🌸
+      Thank you for loving me and making my world complete. 🌍💕
+      I promise to stay with you in every phase of life ,to stay by your side today, tomorrow, and forever. 💍❤️
+      I love you endlessly ❤️
+
+var index = 0;
+var typingStarted = false;
+
+function startTyping() {
+  if (typingStarted) return;
+  typingStarted = true;
+
+  var box = document.getElementById("secretMessage");
+  box.style.display = "block";
+
+  var interval = setInterval(function() {
+    if (index < messageText.length) {
+      box.innerHTML += messageText.charAt(index) === "\n" ? "<br>" : messageText.charAt(index);
+      index++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 50);
+}
 </script>
 
 </body>
