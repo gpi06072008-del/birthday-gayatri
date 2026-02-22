@@ -81,9 +81,15 @@ button:hover {
 }
 
 /* Cake */
-.cake-section img {
-  width: 200px;
+#cake {
+  font-size: 80px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+#cake:hover {
+  transform: scale(1.1);
+}
 }
 
 /* Memories */
