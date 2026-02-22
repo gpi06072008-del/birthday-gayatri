@@ -87,13 +87,19 @@ setInterval(function () {
     seconds + " seconds 💘";
 }, 1000);
 
-// 💌 SECRET MESSAGE (tap title 5 times)
-let tapCount = 0;
-document.getElementById("mainTitle").addEventListener("click", function() {
-  tapCount++;
-  if (tapCount === 5) {
-    document.getElementById("secretMessage").style.display = "block";
-  }
+<div class="secret-section">
+  <button onclick="showSecret()" class="secret-btn">
+    💌 Unlock Secret Message
+  </button>
+
+  <div id="secretMessage" class="secret-message">
+    From 25 Jan 2025, 9:30 PM… 🌙  
+    I knew you were special.  
+    0607 isn’t just a number…  
+    It’s our story, our date, our forever 💖  
+    I love you more than words can explain.
+  </div>
+</div>
 });
 
 </script>
