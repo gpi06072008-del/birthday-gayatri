@@ -9,7 +9,15 @@
 <body>
 
 <!-- Background Music -->
-<audio id="bgMusic" src="song.mp3" autoplay loop></audio>
+let musicStarted = false;
+
+document.addEventListener("click", function() {
+  if (!musicStarted) {
+    const music = document.getElementById("bgMusic");
+    music.play().catch(()=>{});
+    musicStarted = true;
+  }
+});
 
 <!-- Floating Stars -->
 <div class="stars"></div>
