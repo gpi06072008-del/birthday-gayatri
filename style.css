@@ -86,15 +86,42 @@ h1 {
 }
 
 /* 💌 SECRET MESSAGE */
-.secret-box {
+.secret-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.secret-btn {
+  padding: 12px 25px;
+  font-size: 18px;
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.secret-btn:hover {
+  background: #ff1e56;
+  transform: scale(1.05);
+}
+
+.secret-message {
   display: none;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: linear-gradient(45deg, #ff4e9b, #ff85c1);
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ff1e56;
+  background: #fff0f5;
   padding: 20px;
   border-radius: 15px;
-  width: 260px;
-  font-size: 14px;
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
